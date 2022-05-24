@@ -4,7 +4,7 @@ import SignInPage from "./Pages/SignInPage/SignInPage";
 import SignUpPage from "./Pages/SignUpPage/SignUpPage";
 function App() {
   return (
-    <div className="App">
+    <div className="">
       <Navbar />
       <Routes>
         <Route path="/signin-page" element={<SignInPage />} />
