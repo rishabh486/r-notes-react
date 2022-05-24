@@ -8,8 +8,8 @@ function Navbar() {
         if(tokenExists){
             return(
                 <>
-                    <Link to="/watchLater-page">Watch Later</Link>
-                    <Link to="/likeVideo-page">
+                    <Link to="/">Watch Later</Link>
+                    <Link to="/">
                     <div class="notification">
                         <div class="icon-badge">
                             
@@ -46,7 +46,7 @@ function Navbar() {
                         </Link>
                     </div>
                     
-                   <a  onClick={LogOutHandler}className='logout-button'>Logout</a>
+                   {/* <a  onClick={LogOutHandler}className='logout-button'>Logout</a> */}
 
                 </>
             )
