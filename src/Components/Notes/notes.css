@@ -1,0 +1,64 @@
+textarea {
+  resize: none;
+  width: 200px;
+  height: 50px;
+}
+.notes-title {
+  font-size: 23px;
+}
+.notes-body {
+  font-size: 23px;
+}
+.main-content {
+  position: absolute;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  width: 500px;
+  height: 400px;
+  opacity: 1;
+  left: 450px;
+  top: 150px;
+  z-index: 999;
+}
+.main-content-header {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.main-content-body {
+  height: 50%;
+  display: flex;
+  margin: 0.5rem 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.body-text {
+  width: 450px;
+  height: 150px;
+}
+.tags-div {
+  height: 10%;
+  display: flex;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0.5rem;
+}
+.btn-div {
+  display: flex;
+  justify-content: center;
+  height: 10%;
+}
+
+.button-container {
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 1rem;
+  color: black;
+  font-family: "roboto";
+}
+.primary-button1 {
+  background-color: var(--primary-color);
+  width: 50%;
+}

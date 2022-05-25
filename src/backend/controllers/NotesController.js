@@ -68,8 +68,8 @@ export const createNoteHandler = function (schema, request) {
  * send DELETE Request at /api/notes/:noteId
  * */
 
-export const deleteNoteHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+export const deleteNoteHandler = async function (schema, request) {
+  const user = await requiresAuth.call(this, request);
   try {
     if (!user) {
       return new Response(
@@ -81,6 +81,7 @@ export const deleteNoteHandler = function (schema, request) {
       );
     }
     const noteId = request.params.noteId;
+    console.log(noteId);
     user.notes = user.notes.filter((item) => item._id !== noteId);
     this.db.users.update({ _id: user._id }, user);
     return new Response(200, {}, { notes: user.notes });
@@ -136,8 +137,8 @@ export const updateNoteHandler = function (schema, request) {
  * body contains {note}
  * */
 
-export const archiveNoteHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+export const archiveNoteHandler = async function (schema, request) {
+  const user = await requiresAuth.call(this, request);
   try {
     if (!user) {
       return new Response(
@@ -175,8 +176,8 @@ export const archiveNoteHandler = function (schema, request) {
  * body contains {note}
  * */
 
-export const trashNoteHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+export const trashNoteHandler = async function (schema, request) {
+  const user = await requiresAuth.call(this, request);
   try {
     if (!user) {
       new Response(
