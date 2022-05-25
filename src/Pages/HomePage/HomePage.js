@@ -7,7 +7,7 @@ import UserNotes from "../../Components/UserNotes/usernotes";
 
 function HomePage() {
   return (
-    <div>
+    <div className="home">
       <Navbar />
       <div className="notes-page">
         <Sidebar />

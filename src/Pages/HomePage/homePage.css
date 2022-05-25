@@ -1,7 +1,11 @@
 .notes-page{
     display:flex;
 }
-.note-decoration{
+/* .note-decoration{
     margin-left:20px;
     margin-top:15vh;
+} */
+.home{
+    position:relative;
+    
 }
