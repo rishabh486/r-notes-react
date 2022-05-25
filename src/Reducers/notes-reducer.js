@@ -74,3 +74,23 @@ export const AddNotesToArchive = async (id, note, dispatch) => {
     console.log(err);
   }
 };
+export const AddNotesToTrash = async (id, note, dispatch) => {
+  try {
+    const response = await axios.post(
+      `/api/notes/trash/${id}`,
+      { note: { ...note } },
+      {
+        headers: {
+          authorization: localStorage.getItem("notesapp-token"),
+        },
+      }
+    );
+    console.log(response.data);
+    dispatch({
+      type: "ADD_NOTES_TO_TRASH",
+      payload: { trash: response.data.trash },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

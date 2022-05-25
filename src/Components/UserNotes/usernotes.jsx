@@ -1,8 +1,8 @@
 import React from 'react'
 import "./usernotes.css"
-import {delete_icon,archive_icon} from "../../Assests"
+import {delete_icon,archive_icon,trash_icon} from "../../Assests"
 import {useNotes} from "../../Context/notes-context"
-import {AddNotesToArchive, RemoveFromNotes} from "../../Reducers/notes-reducer"
+import {AddNotesToArchive, AddNotesToTrash, RemoveFromNotes} from "../../Reducers/notes-reducer"
 function UserNotes() {
     const {state:{notes},dispatch}=useNotes()
     console.log(notes[0])
@@ -21,6 +21,9 @@ function UserNotes() {
                     <img 
                      onClick={()=>RemoveFromNotes(note._id,dispatch)}
                     className='delete-icon' src={delete_icon}/>
+                     <img 
+                     onClick={()=>AddNotesToTrash(note._id,note,dispatch)}
+                    className='trash-icon' src={trash_icon}/>
                     </div>
                     </div>
                     

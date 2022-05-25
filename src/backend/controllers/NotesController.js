@@ -177,8 +177,8 @@ export const archiveNoteHandler = async function (schema, request) {
  * body contains {note}
  * */
 
-export const trashNoteHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+export const trashNoteHandler = async function (schema, request) {
+  const user = await requiresAuth.call(this, request);
   try {
     if (!user) {
       new Response(
