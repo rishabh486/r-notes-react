@@ -17,78 +17,59 @@ function Sidebar() {
             </div>
             <div class="category-heading">
                 <div>
-                    <h2>Category</h2>
+                    <h2>Tags</h2>
                 </div>
                 <div class="category-container">
-                    <label for="user-choice-check">FrontEnd Develpoment</label>
-                    <input  
-                    //  checked={frontEnd}
-                      
+                    <label for="user-choice-check">Home</label>
+                    <input   
                      value="men"
                      type="checkbox" name="user-choice-check" id="user-choice-check"/>
                 </div>
                 <div class="category-container">
-                    <label for="user-choice-check">BackEnd Develpoment</label>
-                    <input 
-                    //  checked={backEnd}
-                    //  onChange={()=>dispatch({type:"FILTER_BY_CATEGORY",payload:"backEnd"})}
+                    <label for="user-choice-check">Gym</label>
+                    <input
                      value="women"
                      type="checkbox" name="user-choice-check" id="user-choice-check"/>
                 </div>
                 <div class="category-container">
-                    <label for="user-choice-check">Machine Learning</label>
+                    <label for="user-choice-check">Activity</label>
                     <input 
                     type="checkbox"
-                    //  checked={fullStack}
-                    //  onChange={()=>dispatch({type:"FILTER_BY_CATEGORY",payload:"fullStack"})}
                     name="user-choice-check" id="user-choice-check"/>
                 </div>
                 <div class="category-container">
-                    <label for="user-choice-check">Data Structures</label>
+                    <label for="user-choice-check">Office</label>
                     <input 
-                    //  checked={algorithms}
-                    //  onChange={()=>dispatch({type:"FILTER_BY_CATEGORY",payload:"algorithms"})}
                     type="checkbox" name="user-choice-check" id="user-choice-check"/>
                 </div>
 
             </div>
             <div>
-                <button onClick={()=>{setIsOpen(true)}}>CREATE NEW NOTE</button>
+                <button className='button-container-button primary-button' onClick={()=>{setIsOpen(true)}}>CREATE NEW NOTE</button>
             </div>
             {isOpen && <Notes setIsOpen={setIsOpen}/>}
-
-            <div class="rating-heading">
+            <div class="category-heading">
                 <div>
-                    <h2>Rating</h2>
+                    <h2>Priority</h2>
                 </div>
-                <div class="rating-container">
-                    <label for="user-choice-radio">4stars & above</label>
+                <div class="category-container">
+                    <label for="user-choice-check">High</label>
+                    <input  
+                     value="men"
+                     type="checkbox" name="user-choice-check" id="user-choice-check"/>
+                </div>
+                <div class="category-container">
+                    <label for="user-choice-check">Medium</label>
                     <input 
-                   
-                    type="radio" name="user-choice-radio" id="user-choice-radio"/>
+                     value="women"
+                     type="checkbox" name="user-choice-check" id="user-choice-check"/>
                 </div>
-                <div class="rating-container">
-                    <label for="user-choice-radio">3stars & above</label>
-
+                <div class="category-container">
+                    <label for="user-choice-check">Low</label>
                     <input 
-                    
-                    type="radio" name="user-choice-radio" id="user-choice-radio"/>
+                    type="checkbox"
+                    name="user-choice-check" id="user-choice-check"/>
                 </div>
-                <div class="rating-container">
-                    <label for="user-choice-radio">2stars & above</label>
-                    <input
-                   
-                     type="radio" name="user-choice-radio" id="user-choice-radio"/>
-                </div>
-                <div class="rating-container">
-                    <label for="user-choice-radio">1stars & above</label>
-
-                    <input 
-                    
-                    type="radio" name="user-choice-radio" id="user-choice-radio"/>
-                </div>
-
-
 
             </div>
             <div class="sort-by-heading">
