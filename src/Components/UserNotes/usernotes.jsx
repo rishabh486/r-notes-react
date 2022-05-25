@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import "./usernotes.css"
 import {delete_icon,archive_icon,trash_icon} from "../../Assests"
 import {useNotes} from "../../Context/notes-context"
@@ -6,10 +6,14 @@ import {AddNotesToArchive, AddNotesToTrash, RemoveFromNotes} from "../../Reducer
 function UserNotes() {
     const {state:{notes},dispatch}=useNotes()
     console.log(notes[0])
+   const[color,setColor]=useState("")
+   function bgColor(){
+     setColor()
+   }
   return (
     <div className='decoration'>
          {notes && notes.map((note)=>(<div className='user-notes'>
-               <div className='user-notes-detail'>
+               <div   className={`user-notes-detail ${note.tags.color}`}>
                    <div className='upper-div'>
                       <div><h1>Title:</h1><h1>{note.title}</h1>
                      <h1>Body:</h1><h1>{note.bodyText}</h1></div>

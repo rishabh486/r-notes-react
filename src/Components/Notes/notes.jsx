@@ -69,9 +69,9 @@ function Notes({setIsOpen}) {
                         const item=e.target.value
                         setSelColor(item)}}
                   name="cars" id="cars">
-                     <option value="blue">blue</option>
-                       <option value="green">green</option>
-                        <option value="red">red</option>
+                     <option value="yellow">yellow</option>
+                       <option value="brown">brown</option>
+                        <option value="aqua">aqua</option>
   
                     </select>
           </div>
