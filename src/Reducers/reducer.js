@@ -8,6 +8,8 @@ export function authReducer(state, action) {
       return { ...state, notes: action.payload.notes };
     case "GET_USER_NOTES":
       return { ...state, notes: action.payload.notes };
+    case "REMOVE_FROM_NOTES":
+      return { ...state, notes: action.payload.notes };
     default:
       return state;
   }

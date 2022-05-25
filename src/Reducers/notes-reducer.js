@@ -39,3 +39,18 @@ export const UserNotes = async (dispatch) => {
     console.log(err);
   }
 };
+export const RemoveFromNotes = async (id, dispatch) => {
+  try {
+    const response = await axios.delete(`/api/notes/${id}`, {
+      headers: {
+        authorization: localStorage.getItem("notesapp-token"),
+      },
+    });
+    dispatch({
+      type: "REMOVE_FROM_NOTES",
+      payload: { notes: response.data.notes },
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
