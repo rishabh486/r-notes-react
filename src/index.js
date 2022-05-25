@@ -5,6 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import { makeServer } from "./server";
 import { AuthProvider } from "./Context/auth-context";
+import { NotesProvider } from "./Context/notes-context";
 
 // Call make Server
 makeServer();
@@ -13,7 +14,9 @@ root.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
-        <App />
+        <NotesProvider>
+          <App />
+        </NotesProvider>
       </AuthProvider>
     </Router>
   </React.StrictMode>

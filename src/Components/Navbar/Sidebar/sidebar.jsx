@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
+import Notes from '../../Notes/notes'
 import  "./sidebar.css"
 function Sidebar() {
+    const[isOpen,setIsOpen]=useState(false)
   
      return (
     <div>
@@ -50,6 +52,11 @@ function Sidebar() {
                 </div>
 
             </div>
+            <div>
+                <button onClick={()=>{setIsOpen(true)}}>CREATE NEW NOTE</button>
+            </div>
+            {isOpen && <Notes setIsOpen={setIsOpen}/>}
+
             <div class="rating-heading">
                 <div>
                     <h2>Rating</h2>
