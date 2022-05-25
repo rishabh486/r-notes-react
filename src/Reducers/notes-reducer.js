@@ -54,3 +54,23 @@ export const RemoveFromNotes = async (id, dispatch) => {
     console.log(error);
   }
 };
+export const AddNotesToArchive = async (id, note, dispatch) => {
+  try {
+    const response = await axios.post(
+      `/api/notes/archives/${id}`,
+      { note: { ...note } },
+      {
+        headers: {
+          authorization: localStorage.getItem("notesapp-token"),
+        },
+      }
+    );
+    console.log(response.data);
+    dispatch({
+      type: "ADD_NOTES_TO_ARCHIVE",
+      payload: { archives: response.data.archives },
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};

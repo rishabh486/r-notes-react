@@ -137,8 +137,8 @@ export const updateNoteHandler = function (schema, request) {
  * body contains {note}
  * */
 
-export const archiveNoteHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
+export const archiveNoteHandler = async function (schema, request) {
+  const user = await requiresAuth.call(this, request);
   try {
     if (!user) {
       return new Response(
@@ -150,6 +150,7 @@ export const archiveNoteHandler = function (schema, request) {
       );
     }
     const { noteId } = request.params;
+    console.log(noteId);
     const archivedNote = user.notes.filter((note) => note._id === noteId)[0];
     user.notes = user.notes.filter((note) => note._id !== noteId);
     user.archives.push({ ...archivedNote });

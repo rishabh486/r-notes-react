@@ -6,6 +6,7 @@ const NotesContext = createContext();
 const NotesProvider = ({ children }) => {
   const [state, dispatch] = useReducer(authReducer, {
     notes: [],
+    archives: [],
   });
   return (
     <NotesContext.Provider value={{ state, dispatch }}>

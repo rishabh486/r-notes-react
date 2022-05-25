@@ -2,7 +2,7 @@ import React from 'react'
 import "./usernotes.css"
 import {delete_icon,archive_icon} from "../../Assests"
 import {useNotes} from "../../Context/notes-context"
-import {RemoveFromNotes} from "../../Reducers/notes-reducer"
+import {AddNotesToArchive, RemoveFromNotes} from "../../Reducers/notes-reducer"
 function UserNotes() {
     const {state:{notes},dispatch}=useNotes()
     console.log(notes[0])
@@ -16,7 +16,7 @@ function UserNotes() {
 
                      <div>
                     <img className='archive-icon' 
-                    onClick={()=>RemoveFromNotes(note._id,dispatch)}
+                    onClick={()=>AddNotesToArchive(note._id,note,dispatch)}
                     src={archive_icon}/>
                     <img 
                      onClick={()=>RemoveFromNotes(note._id,dispatch)}
