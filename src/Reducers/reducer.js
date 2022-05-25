@@ -6,6 +6,8 @@ export function authReducer(state, action) {
       return { ...state, tokenExists: false };
     case "ADD_NEW_NOTE":
       return { ...state, notes: action.payload.notes };
+    case "GET_USER_NOTES":
+      return { ...state, notes: action.payload.notes };
     default:
       return state;
   }
