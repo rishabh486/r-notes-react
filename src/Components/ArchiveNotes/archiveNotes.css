@@ -1,0 +1,51 @@
+.decoration-archive {
+  position: relative;
+  top: 80px;
+  left: 300px;
+}
+.archive-notes {
+  width: 450px;
+  height: 200px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.user-notes-detail {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.upper-div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+.tags {
+  display: flex;
+  justify-content: space-around;
+}
+.archive-icon {
+  width: 20px;
+  height: 20px;
+  margin: 1rem;
+}
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  margin: 1rem;
+}
+.trash-icon {
+  width: 20px;
+  height: 20px;
+  margin: 1rem;
+}
+.brown {
+  background-color: #f9e8d1;
+}
+.yellow {
+  background-color: #f9ce34;
+}
+.aqua {
+  background-color: aquamarine;
+}
