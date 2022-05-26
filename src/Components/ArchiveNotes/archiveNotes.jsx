@@ -1,6 +1,6 @@
 import React from "react";
 import "./archiveNotes.css";
-import { delete_icon, trash_icon, archive_icon } from "../../Assests";
+import { delete_icon, trash_icon, restore_icon } from "../../Assests";
 import { useNotes } from "../../Context/notes-context";
 import {
   AddFromArchivesToNotes,
@@ -32,7 +32,7 @@ function ArchiveNotes() {
                       onClick={() =>
                         AddFromArchivesToNotes(archive._id, archive, dispatch)
                       }
-                      src={archive_icon}
+                      src={restore_icon}
                     />
                     <img
                       onClick={() => RemoveFromArchives(archive._id, dispatch)}
