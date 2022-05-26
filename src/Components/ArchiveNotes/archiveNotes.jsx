@@ -14,6 +14,7 @@ function ArchiveNotes() {
   return (
     <div>
       <div className="decoration-archive">
+        <h1>Archive Page</h1>
         {archives &&
           archives.map((archive) => (
             <div className="archive-notes">
