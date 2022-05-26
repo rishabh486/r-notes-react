@@ -40,11 +40,11 @@ function ArchiveNotes() {
                       className="delete-icon"
                       src={delete_icon}
                     />
-                    <img
+                    {/* <img
                       onClick={() => AddNotesToTrash(note._id, note, dispatch)}
                       className="trash-icon"
                       src={trash_icon}
-                    />
+                    /> */}
                   </div>
                 </div>
 
