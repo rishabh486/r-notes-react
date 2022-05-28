@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 export const AddFromArchivesToNotes = async (id, archive, dispatch) => {
   try {
     const response = await axios.post(
@@ -12,9 +13,10 @@ export const AddFromArchivesToNotes = async (id, archive, dispatch) => {
     );
     console.log(response.data);
     dispatch({
-      type: "ADD_NOTES_TO_ARCHIVE",
-      payload: { notes: response.data.notes },
+      type: "ADD_FROM_ARCHIVE_TO_NOTES",
+      payload: { notes: response.data.notes, archives: response.data.acrhives },
     });
+    toast.success("Archived Note Added To User Note");
   } catch (err) {
     console.log(err);
   }
@@ -30,6 +32,7 @@ export const RemoveFromArchives = async (id, dispatch) => {
       type: "REMOVE_FROM_ARCHIVES",
       payload: { archives: response.data.archives },
     });
+    toast.success("Deleted From Archived Note");
   } catch (error) {
     console.log(error);
   }

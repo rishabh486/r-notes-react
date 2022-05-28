@@ -11,11 +11,33 @@ export function authReducer(state, action) {
     case "REMOVE_FROM_NOTES":
       return { ...state, notes: action.payload.notes };
     case "ADD_NOTES_TO_ARCHIVE":
-      return { ...state, archives: action.payload.archives };
+      return {
+        ...state,
+        archives: action.payload.archives,
+        notes: action.payload.notes,
+      };
     case "ADD_NOTES_TO_TRASH":
-      return { ...state, trash: action.payload.trash };
+      return {
+        ...state,
+        trash: action.payload.trash,
+        notes: action.payload.notes,
+      };
     case "REMOVE_FROM_ARCHIVES":
       return { ...state, archives: action.payload.archives };
+    case "REMOVE_FROM_TRASH":
+      return { ...state, trash: action.payload.trash };
+    case "ADD_FROM_ARCHIVE_TO_NOTES":
+      return {
+        ...state,
+        archives: action.payload.archives,
+        notes: action.payload.notes,
+      };
+    case "ADD_FROM_TRASH_TO_NOTES":
+      return {
+        ...state,
+        notes: action.payload.notes,
+        trash: action.payload.trash,
+      };
     default:
       return state;
   }
