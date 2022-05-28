@@ -16,6 +16,7 @@ export const AddNotes = async (params, dispatch) => {
       type: "ADD_NEW_NOTE",
       payload: { notes: response.data.notes },
     });
+    toast.success("Note Added");
   } catch (err) {
     console.log(err);
   }
@@ -51,6 +52,7 @@ export const RemoveFromNotes = async (id, dispatch) => {
       type: "REMOVE_FROM_NOTES",
       payload: { notes: response.data.notes },
     });
+    toast.success("Note Deleted");
   } catch (error) {
     console.log(error);
   }
@@ -71,6 +73,7 @@ export const AddNotesToArchive = async (id, note, dispatch) => {
       type: "ADD_NOTES_TO_ARCHIVE",
       payload: { archives: response.data.archives, notes: response.data.notes },
     });
+    toast.success("Note Added To Archives");
   } catch (err) {
     console.log(err);
   }
@@ -89,8 +92,9 @@ export const AddNotesToTrash = async (id, note, dispatch) => {
     console.log(response.data);
     dispatch({
       type: "ADD_NOTES_TO_TRASH",
-      payload: { trash: response.data.trash },
+      payload: { trash: response.data.trash, notes: response.data.notes },
     });
+    toast.success("Note Added To Trash");
   } catch (err) {
     console.log(err);
   }

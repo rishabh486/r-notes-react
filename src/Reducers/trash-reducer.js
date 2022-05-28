@@ -14,8 +14,9 @@ export const AddFromTrashToNotes = async (id, trash, dispatch) => {
     console.log(response.data);
     dispatch({
       type: "ADD_FROM_TRASH_TO_NOTES",
-      payload: { notes: response.data.notes },
+      payload: { notes: response.data.notes, trash: response.data.trash },
     });
+    toast.success("Trash Note Added To User Note");
   } catch (err) {
     console.log(err);
   }
@@ -31,6 +32,7 @@ export const RemoveFromTrash = async (id, dispatch) => {
       type: "REMOVE_FROM_TRASH",
       payload: { trash: response.data.trash },
     });
+    toast.success("Deleted From Trash Note");
   } catch (error) {
     console.log(error);
   }
