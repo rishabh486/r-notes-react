@@ -1,9 +1,9 @@
 import axios from "axios";
-export const AddFromArchivesToNotes = async (id, archive, dispatch) => {
+export const AddFromTrashToNotes = async (id, trash, dispatch) => {
   try {
     const response = await axios.post(
-      `/api/archives/restore/${id}`,
-      { archive: { ...archive } },
+      `/api/trash/restore/${id}`,
+      { trash: { ...trash } },
       {
         headers: {
           authorization: localStorage.getItem("notesapp-token"),
@@ -12,23 +12,23 @@ export const AddFromArchivesToNotes = async (id, archive, dispatch) => {
     );
     console.log(response.data);
     dispatch({
-      type: "ADD_FROM_ARCHIVE_TO_NOTES",
+      type: "ADD_FROM_TRASH_TO_NOTES",
       payload: { notes: response.data.notes },
     });
   } catch (err) {
     console.log(err);
   }
 };
-export const RemoveFromArchives = async (id, dispatch) => {
+export const RemoveFromTrash = async (id, dispatch) => {
   try {
-    const response = await axios.delete(`/api/archives/delete/${id}`, {
+    const response = await axios.delete(`/api/trash/delete/${id}`, {
       headers: {
         authorization: localStorage.getItem("notesapp-token"),
       },
     });
     dispatch({
-      type: "REMOVE_FROM_ARCHIVES",
-      payload: { archives: response.data.archives },
+      type: "REMOVE_FROM_TRASH",
+      payload: { trash: response.data.trash },
     });
   } catch (error) {
     console.log(error);
