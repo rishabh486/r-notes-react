@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { Toastr } from "./Components/toastr";
 import Navbar from "./Components/Navbar/navbar";
 import ArchivePage from "./Pages/ArchivePage/ArchivePage";
 import HomePage from "./Pages/HomePage/HomePage";
@@ -8,6 +9,7 @@ import TrashPage from "./Pages/TrashPage/TrashPage";
 function App() {
   return (
     <div className="App">
+      <Toastr />
       <Navbar />
       <Routes>
         <Route path="/signin-page" element={<SignInPage />} />

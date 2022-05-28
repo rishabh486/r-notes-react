@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 export const AddNotes = async (params, dispatch) => {
   try {
     const response = await axios.post(
@@ -68,7 +69,7 @@ export const AddNotesToArchive = async (id, note, dispatch) => {
     console.log(response.data);
     dispatch({
       type: "ADD_NOTES_TO_ARCHIVE",
-      payload: { archives: response.data.archives },
+      payload: { archives: response.data.archives, notes: response.data.notes },
     });
   } catch (err) {
     console.log(err);
